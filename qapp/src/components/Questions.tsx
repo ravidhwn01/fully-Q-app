@@ -9,9 +9,33 @@ type props = {
 
 }
 
-const Questions:React.FC<props> = () => {
+const Questions:React.FC<props> = (
+    {question
+    ,answers
+    ,callback
+    ,userAnswer
+    ,questionNr
+    ,totalQuestions
+    }
+) => {
   return (
-    <div>Questions</div>
+    <div>
+        <p className="number">
+            Question: {questionNr} / {totalQuestions}
+        </p>
+        <p dangerouslySetInnerHTML={{__html:question}} >
+
+        </p>
+        <div>
+            {answers.map(answers =>(
+                <div>
+                    <button disabled={userAnswer} onClick={callback}>
+                        <span dangerouslySetInnerHTML={{__html:answers}}></span>
+                    </button>
+                </div>
+            ))}
+        </div>
+    </div>
   )
 }
 

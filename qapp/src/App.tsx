@@ -1,7 +1,14 @@
-import React from 'react';
+import React ,{ useState}from 'react';
 import QuestionsCard from './components/Questions';
-
+const TOTAL_QUESTIONS = 20;
 function App() {
+  const [loading, setLoading] = useState(false);
+  const [questions, setQuestions] = useState([]);
+  const [number, setNumber] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [score, setScore] = useState(0);
+  const [gameOver, setGameOver] = useState(true);
+  console.log(questions);
   // https://opentdb.com/api.php?amount=20
   const startTrivia = async () => {
     
@@ -28,11 +35,11 @@ function App() {
         <QuestionsCard
         answers={["ram","good"]}
         callback={checkAnswer}
-        questionNr={1}
+        questionNr={number+1}
         question={"what is your name"}
-        totalQuestions={1}
+        totalQuestions={TOTAL_QUESTIONS}
         userAnswer={true}
-        
+
         />
         <button onClick={nextQuestion} className="next">
           Next Question
