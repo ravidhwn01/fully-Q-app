@@ -20,9 +20,11 @@ const Questions:React.FC<props> = (
 ) => {
   return (
     <div>
+          
         <p className="number">
-            Question: {questionNr} / {totalQuestions}
+            Questions: {questionNr} / {totalQuestions}
         </p>
+          
         <p dangerouslySetInnerHTML={{__html:question}} >
 
         </p>
