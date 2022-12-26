@@ -9,7 +9,9 @@ function App() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
   console.log(questions);
+   //link
   // https://opentdb.com/api.php?amount=20
+  
   const startTrivia = async () => {
     
   }
