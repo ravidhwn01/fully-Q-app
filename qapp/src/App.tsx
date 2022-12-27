@@ -10,9 +10,9 @@ function App() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
   console.log(questions);
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS,Difficulty.MEDIUM));
-  // this is api link 
+   //link
   // https://opentdb.com/api.php?amount=20
+  
   const startTrivia = async () => {
     
   }
