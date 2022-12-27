@@ -33,7 +33,7 @@ function App() {
         <p>
           Loading Questions...
         </p>
-        {/* <QuestionsCard
+        <QuestionsCard
         answers={questions[number].answers}
         callback={checkAnswer}
         questionNr={number+1}
@@ -41,7 +41,7 @@ function App() {
         totalQuestions={TOTAL_QUESTIONS}
         userAnswer={userAnswers?userAnswers[number]:undefined}
 
-        /> */}
+        />
         <button onClick={nextQuestion} className="next">
           Next Question
         </button>
