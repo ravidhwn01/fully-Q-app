@@ -29,8 +29,8 @@ const Questions:React.FC<props> = (
 
         </p>
         <div>
-            {answers.map(answers =>(
-                <div>
+            {answers.map((answers,index) =>(
+                <div key={index}>
                     <button disabled={userAnswer} onClick={callback}>
                         <span dangerouslySetInnerHTML={{__html:answers}}></span>
                     </button>
