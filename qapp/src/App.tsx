@@ -26,7 +26,7 @@ function App() {
     setGameOver(false);
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
-      Difficulty.MEDIUM
+      Difficulty.EASY
     );
     setQuestions(newQuestions);
     setScore(0);
@@ -37,25 +37,29 @@ function App() {
   }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if(!gameOver){
+    if (!gameOver) {
+      // User's answer
       const answer = e.currentTarget.value;
+      // Check answer against correct answer
       const correct = questions[number].correct_answer === answer;
-      if(correct){ setScore(prev => prev + 1);}
+      // Add score if answer is correct
+      if (correct) setScore((prev) => prev + 1);
+      // Save the answer in the array for user answers
       const answerObject = {
         question: questions[number].question,
         answer,
         correct,
         correctAnswer: questions[number].correct_answer,
-      }
-      setUserAnswers(prev => [...prev, answerObject]);
+      };
+      setUserAnswers((prev) => [...prev, answerObject]);
     }
   }
   const nextQuestion = ()=>{
-    const nextQuestion = number + 1;
-    if(nextQuestion === TOTAL_QUESTIONS){
+    const nextQ  = number + 1;
+    if(nextQ  === TOTAL_QUESTIONS){
       setGameOver(true);
     }else{
-      setNumber(nextQuestion);
+      setNumber(nextQ );
     }
 
   }
